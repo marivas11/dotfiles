@@ -10,15 +10,15 @@ if true then return {} end
 -- * override the configuration of LazyVim plugins
 return {
 	-- add gruvbox
-	{ "ellisonleao/gruvbox.nvim" },
+	-- { "ellisonleao/gruvbox.nvim" },
 
 	-- Configure LazyVim to load gruvbox
-	{
-		"LazyVim/LazyVim",
-		opts = {
-			-- colorscheme = "gruvbox",
-		},
-	},
+	-- {
+	-- 	"LazyVim/LazyVim",
+	-- 	opts = {
+	-- 		colorscheme = "gruvbox",
+	-- 	},
+	-- },
 
 	-- change trouble config
 	{
@@ -36,16 +36,6 @@ return {
 		cmd = "SymbolsOutline",
 		keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
 		config = true,
-	},
-
-	-- override nvim-cmp and add cmp-emoji
-	{
-		"hrsh7th/nvim-cmp",
-		dependencies = { "hrsh7th/cmp-emoji" },
-		---@param opts cmp.ConfigSchema
-		opts = function(_, opts)
-			table.insert(opts.sources, { name = "emoji" })
-		end,
 	},
 
 	-- change some telescope options and a keymap to browse plugin files
@@ -238,6 +228,16 @@ return {
 			local luasnip = require("luasnip")
 			local cmp = require("cmp")
 
+			table.insert(opts.sources, {
+				{ name = "emoji" },
+				-- { name = "orgmode" },
+			})
+
+			opts.window = {
+				completion = cmp.config.window.bordered({}),
+				documentation = cmp.config.window.bordered({}),
+			}
+
 			opts.mapping = vim.tbl_extend("force", opts.mapping, {
 				["<Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
@@ -262,6 +262,12 @@ return {
 					end
 				end, { "i", "s" }),
 			})
+			-- Set view to follow cursor while typing
+			opts.view = {
+				entries = {
+					follow_cursor = true,
+				},
+			}
 		end,
 	},
 }
