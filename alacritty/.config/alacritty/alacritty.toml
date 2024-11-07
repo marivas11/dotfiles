@@ -1,6 +1,7 @@
 live_config_reload = true
-import = ["/home/orhun/.config/alacritty/theme.toml"]
-# import = ["/home/orhun/.config/alacritty/gruvbox.toml"]
+# import = ["/Users/marivas/.config/alacritty/theme.toml"]
+# import = ["/Users/marivas/.config/alacritty/kanagawa_dragon.toml"]
+# import = ["/Users/marivas/.config/alacritty/gruvbox.toml"]
 
 [window]
 decorations = "full"
