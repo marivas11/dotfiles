@@ -1,3 +1,4 @@
+[general]
 live_config_reload = true
 # import = ["/Users/marivas/.config/alacritty/theme.toml"]
 # import = ["/Users/marivas/.config/alacritty/kanagawa_dragon.toml"]
@@ -9,7 +10,7 @@ dynamic_title = true
 opacity = 0.95
 option_as_alt = "OnlyLeft"
 
-[shell]
+[terminal.shell]
 program = "/usr/local/bin/zsh"
 args = ["--login"]
 
@@ -90,7 +91,7 @@ mods = "Control|Alt"
 [[keyboard.bindings]]
 action = "ToggleViMode"
 key = "Space"
-mods = "Control"
+mods = "Control|Alt|Shift"
 
 [[keyboard.bindings]]
 action = "ToggleViMode"
