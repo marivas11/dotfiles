@@ -1,0 +1,76 @@
+## myconf 
+
+# theme = "catppuccin_mocha"
+# theme = "darcula-solid"
+# theme = "dark_plus"
+# theme = "molokai"
+# theme = "dracula"
+# theme = "kanagawa-dragon"
+theme = "kanagawa"
+# theme = "pop-dark"
+
+[editor.lsp]
+auto-signature-help = true
+display-messages = true
+display-inlay-hints = true
+
+[editor]
+scroll-lines = 1
+auto-save = false
+completion-trigger-len = 1
+completion-timeout = 15
+true-color = true
+color-modes = true
+# auto-pairs = true
+rulers = [80]
+idle-timeout = 50
+line-number = "relative"
+mouse = false
+cursorline = false
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+render = true
+character = "▏"
+
+# [editor.smart-tab]
+# enable = true
+# supersede-menu = true
+
+# [editor.soft-wrap]
+# enable = true
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name", "file-type", "total-line-numbers", "file-encoding"]
+center = []
+right = ["selections", "primary-selection-length", "position", "position-percentage", "spacer", "diagnostics", "workspace-diagnostics", "version-control"]
+
+[editor.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+'`' = '`'
+'<' = '>'
+
+[keys.insert]
+"A-x" = "normal_mode" # Maps Alt-X to enter normal mode
+j = { k = "normal_mode" } # Maps `jk` to exit insert mode
+# S-tab = "move_parent_node_start"
+
+[keys.normal]
+H = ":toggle lsp.display-inlay-hints"
+C-p = "@:sh "
+# tab = "move_parent_node_end"
+# S-tab = "move_parent_node_start"
+
+# [keys.select]
+# tab = "move_parent_node_end"
+# S-tab = "move_parent_node_start"

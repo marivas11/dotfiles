@@ -1,0 +1,50 @@
+[language-server.rust-analyzer.config]
+check.command = "clippy"
+
+[language-server.odoo-lsp]
+command = "odoo-lsp"
+# [language-server.pyright]
+# command = "pyright-langserver"
+# args = ["--stdio"]
+# config = {} # buggy behaviour, you need a pyproject.toml and pyrightconfig.json
+
+[[language]]
+name = "python"
+formatter = { command = "black", args = ["--line-length", "88", "--quiet", "-"] }
+auto-format = true
+roots = ["pyproject.toml", ".odoo_lsp", ".odoo_lsp.json", ]
+# language-servers = [ "odoo-lsp", "pyright", "ruff" ]
+language-servers = ["pyright", "ruff" ]
+
+[language-server.pyright.config.python.analysis]
+typeCheckingMode = "basic"
+
+[language-server.ruff]
+command = "ruff-lsp"
+
+[language-server.ruff.config.settings]
+args = ["--ignore", "E501"]
+
+[language-server.astro-ls]
+command = "astro-ls"
+args = [ "--stdio" ]
+config = { "typescript" = { "tsdk" = "/Users/marivas/Library/pnpm/global/5/node_modules/typescript/lib"}, "environment" = "node" }
+
+[[language]]
+name = "astro"
+scope = "source.astro"
+injection-regex = "astro"
+file-types = ["astro"]
+roots = ["package.json", "astro.config.mjs"]
+language-servers = [ "astro-ls" ]
+
+[[language]]
+name = "markdown"
+file-types = ["qmd", "md", "markdown", "mkd", "mkdn", "mdwn", "mdown", "markdn", "mdtxt", "mdtext", "workbook", { glob = "PULLREQ_EDITMSG" }]
+
+[[language]]
+name = "xml"
+language-servers = ["odoo-lsp"]
+roots = [".odoo_lsp", ".odoo_lsp.json"]
+
+
