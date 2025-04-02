@@ -9,11 +9,6 @@
 theme = "kanagawa"
 # theme = "pop-dark"
 
-[editor.lsp]
-auto-signature-help = true
-display-messages = true
-display-inlay-hints = true
-
 [editor]
 scroll-lines = 1
 auto-save = false
@@ -22,11 +17,20 @@ completion-timeout = 15
 true-color = true
 color-modes = true
 # auto-pairs = true
-rulers = [80]
+rulers = [100]
 idle-timeout = 50
 line-number = "relative"
 mouse = false
 cursorline = false
+end-of-line-diagnostics = "hint"
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
+
+[editor.lsp]
+auto-signature-help = true
+display-messages = true
+display-inlay-hints = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -67,6 +71,7 @@ j = { k = "normal_mode" } # Maps `jk` to exit insert mode
 
 [keys.normal]
 H = ":toggle lsp.display-inlay-hints"
+"C-j" = ":toggle lsp.auto-signature-help"
 C-p = "@:sh "
 # tab = "move_parent_node_end"
 # S-tab = "move_parent_node_start"

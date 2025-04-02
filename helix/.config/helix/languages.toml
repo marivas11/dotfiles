@@ -1,3 +1,8 @@
+# [language-server]
+# vscode-css-language-server = { command = "vscode-css-languageserver", args = ["--stdio"], config = { provideFormatter = true, css = { validate = { enable = true } } } }
+# vscode-html-language-server = { command = "vscode-html-languageserver", args = ["--stdio"], config = { provideFormatter = true } }
+# vscode-json-language-server = { command = "vscode-json-languageserver", args = ["--stdio"], config = { provideFormatter = true, json = { validate = { enable = true } } } }
+
 [language-server.rust-analyzer]
 command = "rust-analyzer"
 
@@ -132,7 +137,7 @@ include = ["*.py"]
 fix = true                     # TODO 
 
 [language-server.ruff.config.settings]
-lineLength = 80
+lineLength = 100
 logLevel = "debug"
 
 [language-server.ruff.analyze]
