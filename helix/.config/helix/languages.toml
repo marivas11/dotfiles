@@ -147,6 +147,29 @@ detect-string-imports = true
 convention = "google"
 
 [language-server.ruff.config.settings.lint]
+# select = [
+#   "E",
+#   "F",
+#   "W",
+#   "B",
+#   "I",
+#   "RUF",
+#   "N",
+#   "SIM",
+#   "LOG",
+#   "ERA",
+#   "W",
+#   "D",
+#   "UP",
+#   "ANN",
+#   "ASYNC",
+#   "S",
+#   "RET",
+#   "TCH",
+#   "ARG",
+#   "PTH",
+#   "DOC",
+# ]
 select = [
   "E",
   "F",
@@ -159,7 +182,6 @@ select = [
   "LOG",
   "ERA",
   "W",
-  "D",
   "UP",
   "ANN",
   "ASYNC",
