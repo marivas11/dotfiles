@@ -99,7 +99,8 @@ injection-regex = "py(thon)?"
 language-id = "python"
 auto-format = true
 # language-servers = ["basedpyright", "ruff", "scls"]
-language-servers = ["basedpyright", "ruff"]
+# language-servers = ["basedpyright", "ruff"]
+language-servers = ["ty", "ruff"]
 formatter = { command = "ruff", args = ["format", "-"] }
 file-types = ["py", "pyi", "py3", "pyw", "ptl", "rpy", "cpy", "ipy", "pyt", { glob = ".python_history" }, { glob = ".pythonstartup" }, { glob = ".pythonrc" }, { glob = "SConstruct" }, { glob = "SConscript" }]
 comment-token = "#"
